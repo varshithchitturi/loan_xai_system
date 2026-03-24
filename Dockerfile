@@ -9,8 +9,10 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend /app/backend
-COPY models /app/models
 COPY database /app/database
+COPY main.py /app/main.py
+# models/ is optional — created at runtime if not present
+RUN mkdir -p /app/models
 
 EXPOSE 8000
 
