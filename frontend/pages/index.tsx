@@ -10,7 +10,7 @@ import ProbabilityGauge from '@/components/ProbabilityGauge';
 import RiskMeter from '@/components/RiskMeter';
 import TrustScoreCard from '@/components/TrustScoreCard';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
